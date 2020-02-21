@@ -1,0 +1,29 @@
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-18.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Compress action step
+        uses: ./ # Uses an action in the root directory
+        id: compress
+        with:
+          command: c
+          cwd: ./test
+          files: |
+            ./toCompress
+          outPath: yolo.tar.gz
+          # Use the output from the `compress` step
+      - name: Get the output
+        run: echo "The output was ${{ steps.compress.outputs.done }}"
+      - uses: actions/upload-artifact@v1
+        with:
+          name: yolo.tar.gz
+          path: yolo.tar.gz

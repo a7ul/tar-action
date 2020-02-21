@@ -10,8 +10,8 @@ inputs:
   files:
     description: "List of files or folders to archive"
     required: true
-  archiveName:
-    description: "Name of the archive (ex: abc.tar.gz)"
+  outPath:
+    description: "Path of the output archive (ex: abc.tar.gz)"
     required: true
 outputs:
   done:
