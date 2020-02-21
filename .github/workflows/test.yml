@@ -18,7 +18,7 @@ jobs:
           command: c
           cwd: ./test
           files: |
-            toCompress
+            test/toCompress
           archiveName: yolo.tar.gz
           # Use the output from the `compress` step
       - name: Get the output
