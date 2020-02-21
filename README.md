@@ -30,7 +30,7 @@ outputs:
     steps:
       - uses: actions/checkout@master
       - name: Compress action step
-        uses: master-atul/tar-action@v0.0.1
+        uses: master-atul/tar-action@v1.0.2
         id: compress
         with:
           command: c
