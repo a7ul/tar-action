@@ -4,7 +4,7 @@
   "description": "A github action to use tar in all platforms",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "parcel build src/index.js --target node --no-source-maps --bundle-node-modules -d .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +16,6 @@
     "tar": "^6.0.1"
   },
   "devDependencies": {
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "parcel": "^1.12.4"
   }
 }
