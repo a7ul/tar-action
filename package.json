@@ -2,9 +2,9 @@
   "name": "tar-action",
   "version": "1.0.0",
   "description": "A github action to use tar in all platforms",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "parcel build src/index.js --target node --no-source-maps --bundle-node-modules -d .",
+    "build": "ncc build ./src/index.js -m",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +16,6 @@
     "tar": "^6.0.1"
   },
   "devDependencies": {
-    "parcel": "^1.12.4"
+    "@zeit/ncc": "^0.21.1"
   }
 }
