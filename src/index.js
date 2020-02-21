@@ -5,7 +5,10 @@ const fs = require("fs");
 try {
   const cwd = core.getInput("cwd");
   const command = core.getInput("command", { required: true });
-  const files = core.getInput("files", { required: true });
+  const files = core
+    .getInput("files", { required: true })
+    .split("\n")
+    .filter(x => x !== "");
   const outPath = core.getInput("outPath", { require: true });
 
   const listOfFiles = Array.isArray(files) ? files : [files];
