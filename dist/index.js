@@ -34,7 +34,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(104);
+/******/ 		return __webpack_require__(751);
 /******/ 	};
 /******/
 /******/ 	// run startup
@@ -892,35 +892,6 @@ const findMadeSync = (opts, parent, path = undefined) => {
 }
 
 module.exports = {findMade, findMadeSync}
-
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
-
-const core = __webpack_require__(470);
-const tar = __webpack_require__(885);
-
-try {
-  const cwd = core.getInput("cwd");
-  const command = core.getInput("command", { required: true });
-  const files = core.getInput("files", { required: true });
-  const archiveName = core.getInput("archiveName", { require: true });
-
-  switch (command) {
-    case "c": {
-      tar.c({ cwd, gzip: true, name: archiveName, sync: true }, files);
-      break;
-    }
-    default:
-      throw new Error(`Unsupported command: ${command}`);
-  }
-
-  core.setOutput("done", true);
-} catch (error) {
-  core.setFailed(error.message);
-}
 
 
 /***/ }),
@@ -5648,6 +5619,35 @@ module.exports = Pack
 /***/ (function(module) {
 
 module.exports = require("fs");
+
+/***/ }),
+
+/***/ 751:
+/***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
+
+const core = __webpack_require__(470);
+const tar = __webpack_require__(885);
+
+try {
+  const cwd = core.getInput("cwd");
+  const command = core.getInput("command", { required: true });
+  const files = core.getInput("files", { required: true });
+  const archiveName = core.getInput("archiveName", { require: true });
+
+  switch (command) {
+    case "c": {
+      tar.c({ cwd, gzip: true, name: archiveName, sync: true }, files);
+      break;
+    }
+    default:
+      throw new Error(`Unsupported command: ${command}`);
+  }
+
+  core.setOutput("done", true);
+} catch (error) {
+  core.setFailed(error.message);
+}
+
 
 /***/ }),
 

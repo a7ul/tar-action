@@ -4,7 +4,7 @@
   "description": "A github action to use tar in all platforms",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build index.js",
+    "build": "ncc build action.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
