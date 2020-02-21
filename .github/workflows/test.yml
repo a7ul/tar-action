@@ -19,7 +19,11 @@ jobs:
           cwd: ./test
           files: |
             test/toCompress
-          archiveName: yolo.tar.gz
+          outPath: yolo.tar.gz
           # Use the output from the `compress` step
       - name: Get the output
         run: echo "The output was ${{ steps.compress.outputs.done }}"
+      - uses: actions/upload-artifact@v1
+        with:
+          name: yolo.tar.gz
+          path: yolo.tar.gz
