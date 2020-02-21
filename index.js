@@ -9,7 +9,7 @@ try {
 
   switch (command) {
     case "c": {
-      tar.c({ cwd, name: archiveName, sync: true }, files);
+      tar.c({ cwd, gzip: true, name: archiveName, sync: true }, files);
       break;
     }
     default:
