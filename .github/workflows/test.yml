@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Compress action step
-        uses: ./dist/index.js # Uses an action in the root directory
+        uses: ./ # Uses an action in the root directory
         id: compress
         with:
           command: c
