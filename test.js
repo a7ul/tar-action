@@ -1,14 +1,12 @@
 const tar = require("tar");
+const fs = require("fs");
 
 const cwd = "./test";
-const command = "c";
-const files = "toCompress";
-const archiveName = "yolo.tar.gz";
+const files = "toCompress/";
+const outPath = "yolo.tar.gz";
 
-let listOfFiles = [];
-if (Array.isArray(files)) {
-  listOfFiles = [...files];
-} else {
-  listOfFiles = [files];
-}
-tar.c({ cwd, gzip: true, name: archiveName, sync: true }, listOfFiles);
+const listOfFiles = Array.isArray(files) ? files : [files];
+
+tar
+  .c({ cwd, gzip: true, sync: true }, listOfFiles)
+  .pipe(fs.createWriteStream(outPath));

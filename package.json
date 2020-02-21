@@ -2,9 +2,9 @@
   "name": "tar-action",
   "version": "1.0.0",
   "description": "A github action to use tar in all platforms",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
-    "build": "ncc build ./src/index.js -o .",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
     "tar": "^6.0.1"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.21.1"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }

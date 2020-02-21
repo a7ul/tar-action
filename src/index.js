@@ -1,15 +1,20 @@
 const core = require("@actions/core");
 const tar = require("tar");
+const fs = require("fs");
 
 try {
   const cwd = core.getInput("cwd");
   const command = core.getInput("command", { required: true });
   const files = core.getInput("files", { required: true });
-  const archiveName = core.getInput("archiveName", { require: true });
+  const outPath = core.getInput("outPath", { require: true });
+
+  const listOfFiles = Array.isArray(files) ? files : [files];
 
   switch (command) {
     case "c": {
-      tar.c({ cwd, gzip: true, name: archiveName, sync: true }, files);
+      tar
+        .c({ cwd, gzip: true, sync: true }, listOfFiles)
+        .pipe(fs.createWriteStream(outPath));
       break;
     }
     default:
