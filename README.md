@@ -38,4 +38,11 @@ outputs:
           files: |
             ./toCompress
           outPath: yolo.tar.gz
+      - name: Extract files
+        uses: master-atul/tar-action@v1.0.2
+        id: extract
+        with:
+          command: x
+          cwd: ./extract
+          files: yolo.tar.gz
 ```
