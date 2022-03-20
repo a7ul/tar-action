@@ -11,7 +11,7 @@
   "author": "atulanand94@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "1.1.0",
+    "@actions/core": "1.2.6",
     "@actions/github": "^2.1.1",
     "tar": "^6.0.1"
   },
