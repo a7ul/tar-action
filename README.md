@@ -30,7 +30,7 @@ outputs:
     steps:
       - uses: actions/checkout@master
       - name: Compress action step
-        uses: a7ul/tar-action@v1.0.2
+        uses: a7ul/tar-action@v1.1.0
         id: compress
         with:
           command: c
@@ -39,7 +39,7 @@ outputs:
             ./toCompress
           outPath: yolo.tar.gz
       - name: Extract files
-        uses: a7ul/tar-action@v1.0.2
+        uses: a7ul/tar-action@v1.1.0
         id: extract
         with:
           command: x
