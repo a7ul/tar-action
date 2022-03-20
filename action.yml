@@ -1,5 +1,8 @@
 name: "Tar action"
 description: "A cross platform github action for using tar."
+branding:
+  icon: 'box'  
+  color: 'green'
 inputs:
   cwd:
     description: "Current working directory for tar command"
