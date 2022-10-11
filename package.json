@@ -1,6 +1,6 @@
 {
   "name": "tar-action",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A github action to use tar in all platforms",
   "main": "index.js",
   "scripts": {
