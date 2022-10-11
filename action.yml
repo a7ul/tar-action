@@ -20,5 +20,5 @@ outputs:
   done:
     description: "returns true if successful"
 runs:
-  using: "node12"
+  using: "node16"
   main: "index.js"
